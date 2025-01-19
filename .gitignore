@@ -1,11 +1,10 @@
 node_modules
 /.next/
-.env*
 /sanity/
+.env*
 middleware.ts
 next-env.d.ts
 next.config.ts
 sanity.cli.ts
 sanityf.config.ts
-
 
