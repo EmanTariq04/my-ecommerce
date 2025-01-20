@@ -1,6 +1,5 @@
 node_modules
 /.next/
-/sanity/
 .env*
 middleware.ts
 next-env.d.ts
