@@ -9,4 +9,5 @@ sanity.cli.ts
 sanityf.config.ts
 sanity/env.ts
 .env.local
+sanity.types.ts
 
