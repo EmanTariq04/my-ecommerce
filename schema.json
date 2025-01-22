@@ -381,7 +381,7 @@
         },
         "optional": true
       },
-      "souponCode": {
+      "couponCode": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
