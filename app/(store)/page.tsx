@@ -13,7 +13,7 @@ export default async function Home() {
   //crypto.randomUUID().slice(0, 5) +
   // `>>> Rerendered the home page cache with ${products.length} products and ${getEnabledCategories.length} categories`)
 
-  return ( 
+  return (
     <div>
       <BlackFridayBanner />
       <div className="flex flex-col items-center justify-top min-h-screen bg-gray-100 p-4">

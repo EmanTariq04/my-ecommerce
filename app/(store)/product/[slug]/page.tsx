@@ -20,7 +20,7 @@ async function ProductPage({
 
   const isOutOfStock = product.stock != null && product.stock <= 0;
   console.log("Product data:", product);
-  
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -46,7 +46,9 @@ async function ProductPage({
             <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
             <div className="text-xl font-semibold mb-4">
               {/* ${product.price?.toFixed(2)} */}
-              {product.price ? `$${product.price.toFixed(2)}` : "Price not available"}
+              {product.price
+                ? `$${product.price.toFixed(2)}`
+                : "Price not available"}
             </div>
             <div className="prose max-w-none mb-6">
               {Array.isArray(product.description) && (

@@ -17,10 +17,10 @@ function Header() {
 
   const createClerkPasskey = async () => {
     try {
-       const response = await user?.createPasskey();
-       console.log(response);
+      const response = await user?.createPasskey();
+      console.log(response);
     } catch (err) {
-        console.error("Error:", JSON.stringify(err, null, 2))
+      console.error("Error:", JSON.stringify(err, null, 2));
     }
   };
 
