@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import { Product } from "@/sanity.types";
 import ProductThumb from "./ProductThumb";
