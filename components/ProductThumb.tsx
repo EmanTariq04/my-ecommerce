@@ -1,9 +1,9 @@
-import { ProductType } from "@/sanity.types";
+import { Products } from "@/sanity.types";
 import Link from "next/link";
 import Image from "next/image";
 import { imageUrl } from "@/lib/imageUrl";
 
-function ProductThumb({ product }: { product: ProductType }) {
+function ProductThumb({ product }: { product: Products }) {
   const isOutOfStock = product.stock != null && product.stock <= 0;
 
   return (
