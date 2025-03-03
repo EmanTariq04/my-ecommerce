@@ -6,8 +6,6 @@ import BlackFridayBanner from "@/components/BlackFridayBanner";
 export default async function Home() {
   const products = await getAllProducts();
   const categories = await getAllCategories();
-  // const products = (await getAllProducts()) ?? [];
-  // const categories = (await getAllCategories()) ?? [];
 
   //console.log(
   //crypto.randomUUID().slice(0, 5) +
