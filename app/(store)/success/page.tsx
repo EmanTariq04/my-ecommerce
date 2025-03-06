@@ -24,19 +24,7 @@ function SuccessPage() {
             <div className="bg-white p-12 rounded-xl shadow-lg max-w-2xl w-full mx-4">
                 <div className="flex justify-center mb-8">
                     <div className="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center">
-                        <svg
-                            className="h-8 w-8 text-green-600"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="MS 13l4 4L19 7"
-                            />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check"><path d="M20 6 9 17l-5-5" /></svg>
                     </div>
                 </div>
                 <h1 className="text-4xl font-bold mb-6 text-center">Thank You for Your Order</h1>
