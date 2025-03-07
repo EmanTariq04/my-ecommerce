@@ -1,5 +1,4 @@
 import stripe from "@/lib/stripe";
-// import { Metadata } from "next";
 import { Metadata } from "@/actions/createCheckoutSession";
 import { client } from "@/sanity/lib/backendClient";
 import { headers } from "next/headers";
@@ -20,7 +19,7 @@ export async function POST(req: NextRequest) {
     if (!webhookSecret) {
         console.log("Stripe webhook secret is not set");
         return NextResponse.json(
-            { error: "Strie webhook secret is not set" },
+            { error: "Stripe webhook secret is not set" },
             { status: 400 }
         );
     }
@@ -99,6 +98,7 @@ async function createOrderInSanity(session: Stripe.Checkout.Session) {
             : 0,
         products: sanityProducts,
         totalPrice: amount_total ? amount_total / 100 : 0,
+        status: "paid",
         orderDate: new Date().toISOString(),
     });
 
