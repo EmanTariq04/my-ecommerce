@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 import { formatCurrency } from "@/lib/formatCurrency";
 import { imageUrl } from "@/lib/imageUrl";
 import Image from "next/image";
-import { Product } from "@/sanity.types";
 
 interface Order {
   orderNumber: string;
