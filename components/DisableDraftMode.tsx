@@ -1,7 +1,7 @@
 "use client";
 
 import { useDraftModeEnvironment } from "next-sanity/hooks";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export function DisableDraftMode() {
     const environment = useDraftModeEnvironment();

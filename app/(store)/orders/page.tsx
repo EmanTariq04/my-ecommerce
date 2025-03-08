@@ -2,9 +2,9 @@ import { getMyOrders } from "@/sanity/lib/orders/getMyOrders";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { formatCurrency } from "@/lib/formatCurrency";
-import { Product } from "@/sanity.types";
 import { imageUrl } from "@/lib/imageUrl";
 import Image from "next/image";
+import { Product } from "@/sanity.types";
 
 interface Order {
   orderNumber: string;
@@ -13,6 +13,15 @@ interface Order {
   totalPrice?: number;
   currency: string;
   amountDiscount?: number;
+  products: {
+    quantity: number;
+    product?: {
+      _id: string;
+      name: string;
+      price: number;
+      image: any;
+    };
+  }[];
 }
 
 async function Orders() {
@@ -97,13 +106,16 @@ async function Orders() {
                   ) : null}
                 </div>
                 <div className="px-4 py-3 sm:px-6 sm:py-4">
-                  <p className="text-sm font-semibold text-gray-600 mb-3 sm:mb-4">Order Items</p>
+                  <p className="text-sm font-semibold text-gray-600 mb-3 sm:mb-4">
+                    Order Items
+                  </p>
 
                   <div className="space-y-3 sm:space-y-4">
-                    {order.product?.map((product) => {
+                    {order.products?.map((product) => (
                       <div
                         key={product.product?._id}
-                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 py-2 border-b last:border-b-8">
+                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 py-2 border-b last:border-b-0"
+                      >
                         <div className="flex items-center gap-3 sm:gap-4">
                           {product.product?.image && (
                             <div className="relative h-14 w-14 sm:h-16 sm:w-16 flex-shrink-0 rounded-md overflow-hidden">
@@ -116,17 +128,20 @@ async function Orders() {
                             </div>
                           )}
                           <div>
-                            <p className="font-medium text-sm sm:text-base">{product.product?.name}</p>
+                            <p className="font-medium text-sm sm:text-base">
+                              {product.product?.name}
+                            </p>
                             <p className="text-sm text-gray-600">Quantity: {product.quantity ?? "N/A"}</p>
                           </div>
                         </div>
                         <p className="font-medium text-right">
-                          {product.product?.price && product.quantity ? formatCurrency(
-                            product.product.price * product.quantity, order.currency
-                          ) : "N/A"}
+                          {product.product?.price && product.quantity
+                            ? formatCurrency(product.product.price * product.quantity, order.currency)
+                            : "N/A"}
                         </p>
                       </div>
-                    })}
+                    ))}
+
                   </div>
                 </div>
               </div>
