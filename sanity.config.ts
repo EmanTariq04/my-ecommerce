@@ -27,10 +27,9 @@ export default defineConfig({
     visionTool({ defaultApiVersion: apiVersion }),
     presentationTool({
       previewUrl: {
-        origin: process.env.SANITY_STUDIO_PREVIEW_ORIGIN,
         preview: "/",
         previewMode: {
-          enable: "/api/draft-mode/enable",
+          enable: "/draft-mode/enable",
         },
       },
     }),
